@@ -73,8 +73,19 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
 $routes->get('/student', 'Student::index');
+$routes->get('/student/(:id)', 'Student::show/$1');
+$routes->post('/student', 'Student::create');
+$routes->put('/student/(:id)', 'Student::update/$1');
+$routes->delete('student/(:id)', 'Student::delete/$1');
+
+
 $routes->get('/teacher', 'Teacher::index');
+$routes->get('/teacher/(:id)', 'Teacher::show/$1');
+$routes->post('/teacher', 'Teacher::create');
+$routes->put('/teacher/(:id)', 'Teacher::update/$1');
+$routes->delete('teacher/(:id)', 'Teacher::delete/$1');
 
 
 
